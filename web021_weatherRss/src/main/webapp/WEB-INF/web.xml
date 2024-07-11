@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="6.0"
+	xmlns="https://jakarta.ee/xml/ns/jakartaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee                       https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
+
+	<welcome-file-list>
+		<welcome-file>weather.html</welcome-file>
+	</welcome-file-list>
+
+<servlet>
+	<servlet-name>WeatherXML</servlet-name>
+	<servlet-class>com.min.edu.ctrl.WeatherXMLServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+		<servlet-name>WeatherXML</servlet-name>
+		<url-pattern>/weatherXML.do</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>weatherOpen</servlet-name>
+	<servlet-class>com.min.edu.ctrl.WeatherCtrl</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>weatherOpen</servlet-name>
+	<url-pattern>/weatherOpen.do</url-pattern>
+</servlet-mapping>
+
+</web-app>

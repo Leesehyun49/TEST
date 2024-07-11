@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>날씨예보확인</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="./js/weather.js"></script>
+<style type="text/css">
+	table{
+		border: 1px solid #ccc;
+		border-collapse: collapse;
+	}
+	td, th{
+		border: 1px solid #ccc;
+	}
+	.hd{
+		background-color: skyblue;
+		text-align: center;
+	}
+	img{
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+	<h3>기상청에서 제공하는 날씨 RSS</h3>
+	<table>
+		<tr class="hd">
+			<th colspan="5">지역</th>
+		</tr>
+		<tr>
+			<td>주소선택</td>
+			<td>
+				<select id="address">
+					<option value="1154551000">금천구</option>
+					<option value="5013025300">남원읍</option>
+				</select>
+			</td>
+			<td>
+				<button id="weatherView">날씨보기</button>
+			</td>
+		</tr>
+		<tr class="hd">
+			<th colspan="5">현재날씨</th>
+		</tr>
+		<tr>
+			<td>기준시간</td>
+			<td><input type="text" id="pubDate" readonly="readonly"></td>
+			<td rowspan="5">
+				<img id="weatherImg" alt="날씨이미지" src="./image/Clear.png">
+			</td>
+		</tr>
+		<tr>
+			<td>날씨</td>
+			<td>
+				<input type="text" id="wfKor" readonly="readonly">
+			</td>
+		</tr>
+		<tr>
+			<td>온도</td>
+			<td>
+				<input type="text" id="temp" readonly="readonly">
+			</td>
+		</tr>
+		<tr>
+			<td>습도</td>
+			<td>
+				<input type="text" id="reh" readonly="readonly">
+			</td>
+		</tr>
+		<tr>
+			<td>강수확률</td>
+			<td>
+				<input type="text" id="pop" readonly="readonly">
+			</td>
+		</tr>
+	</table>
+	
+	<fieldset>
+		<legend>공공데이터는 화면에서 직접 AJAX로 호출하면 CORS 문제 발생</legend>
+		<button id="cors">CORS문제</button>
+	</fieldset>
+	<fieldset>
+		<legend>Server에서 공공데이터를 호출 Jsoup</legend>
+		<button id="xmlView">xmlView 읽기</button>
+	</fieldset>
+</body>
+</html>
